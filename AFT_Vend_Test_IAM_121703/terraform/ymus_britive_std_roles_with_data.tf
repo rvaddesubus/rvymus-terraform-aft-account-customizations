@@ -28,7 +28,7 @@ variable britive_read_only_role_name {
     statement {
       actions = ["sts:AssumeRole"]
       principals {
-        type "Federated"
+        type = "Federated"
         identifiers  = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:saml-provider/${var.britive_idp_name}"]
       }
       condition = {
