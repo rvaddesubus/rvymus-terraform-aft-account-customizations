@@ -39,7 +39,7 @@ resource "aws_iam_role" "britive_admin_role" {
         }
         Condition = {
           StringEquals = {
-            SAML:aud = "https://signin.aws.amazon.com/saml"
+            "SAML:aud" = "https://signin.aws.amazon.com/saml"
           }
         }
       }
@@ -66,7 +66,7 @@ resource "aws_iam_role" "britive_app_role" {
         }
         Condition = {
           StringEquals = {
-            SAML:aud = "https://signin.aws.amazon.com/saml"
+            "SAML:aud" = "https://signin.aws.amazon.com/saml"
           }
         }
       }
@@ -93,7 +93,7 @@ resource "aws_iam_role" "britive_read_only_role" {
         }
         Condition = {
           StringEquals = {
-            SAML:aud = "https://signin.aws.amazon.com/saml"
+            "SAML:aud" = "https://signin.aws.amazon.com/saml"
           }
         }
       }
