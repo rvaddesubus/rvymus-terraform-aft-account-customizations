@@ -32,12 +32,12 @@ variable britive_read_only_role_name {
         identifiers  = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:saml-provider/${var.britive_idp_name}"]
       }
       condition {
-        StringEquals = {
-          "SAML:aud" = "https://signin.aws.amazon.com/saml"
+        test     = "StringEquals"
+        variable = "SAML:aud"
+        values = ["https://signin.aws.amazon.com/saml"]
         }
       }
     }
-  }
   
 resource "aws_iam_role" "britive_admin_role" {
   name = var.britive_admin_role_name
