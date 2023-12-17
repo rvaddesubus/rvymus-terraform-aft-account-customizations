@@ -9,7 +9,7 @@ variable britive_idp_name {
 variable britive_admin_role_name {
   description = "Name of Integration RoleName"
   type = string
-  default = "stationdm-admin-prod-role"
+  default = "stationdm-admin-prod-role-test"
 }
 
 variable britive_app_role_name {
