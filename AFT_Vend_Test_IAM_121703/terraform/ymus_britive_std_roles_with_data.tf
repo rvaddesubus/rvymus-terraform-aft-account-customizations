@@ -31,8 +31,8 @@ variable britive_read_only_role_name {
         type = "Federated"
         identifiers  = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:saml-provider/${var.britive_idp_name}"]
       }
-      condition = {
-        stringEquals = {
+      condition {
+        StringEquals = {
           "SAML:aud" = "https://signin.aws.amazon.com/saml"
         }
       }
