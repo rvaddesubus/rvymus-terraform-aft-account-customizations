@@ -25,13 +25,14 @@ variable britive_read_only_role_name {
 }
 
  data "aws_iam_policy_document" "assume_role" {
-    Statement {
-      Actions = ["sts:AssumeRole"]
-      Principals {
-        Federated = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:saml-provider/${var.britive_idp_name}"
+    statement {
+      actions = ["sts:AssumeRole"]
+      principals {
+        type "Federated"
+        identifiers  = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:saml-provider/${var.britive_idp_name}"]
       }
-      Condition = {
-        StringEquals = {
+      condition = {
+        stringEquals = {
           "SAML:aud" = "https://signin.aws.amazon.com/saml"
         }
       }
