@@ -62,5 +62,3 @@ if __name__ == "__main__":
         print(f"The secret value is: {secret_value}")
     else:
         print("Failed to retrieve the secret.")
-
-exit (5)
